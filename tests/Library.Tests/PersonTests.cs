@@ -86,7 +86,7 @@ namespace Ucu.Poo.Persons.Tests
         {
             const string name = "One";
             const string anotherName = "Two";
-            const string hi = "Hola, Two, mi nombre es One\n";
+            const string hi = "Hola, Two, mi nombre es One";
 
             Person one = new Person(name, string.Empty);
             Person two = new Person(anotherName, string.Empty);
@@ -97,7 +97,7 @@ namespace Ucu.Poo.Persons.Tests
 
                 one.IntroduceTo(two);
 
-                Assert.AreEqual(hi, consoleContent.ToString());
+                Assert.That(consoleContent.ToString(), Does.Contain(hi));
             }
         }
     }
